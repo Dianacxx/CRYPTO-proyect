@@ -35,6 +35,20 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ],
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dianacxx/CRYPTO-proyect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dianacxx/CRYPTO-proyect/issues"
+  },
+  "homepage": "https://github.com/Dianacxx/CRYPTO-proyect#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
   }
+}
 }
