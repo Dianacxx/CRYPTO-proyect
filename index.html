@@ -1,142 +1,155 @@
 <!DOCTYPE html>
 <!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Prentis Fox</title>
-      
-     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-       
-      <link rel="stylesheet" href="css/styles.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-   <body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Prentis Fox</title>
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
       <nav>
-         <div class="logo">
-            Prentis Fox
-         </div>
-         <input type="checkbox" id="click">
-         <label for="click" class="menu-btn">
-         <i class="fas fa-bars"></i>
-         </label>
-         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Learn</a></li>
-            <li><a  class="active" href="#">Connect Wallet</a></li>
-            <li><a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-gear-fill gear" viewBox="0 0 16 16">
-                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-              </svg></a></li>
-         </ul>
+        <div class="logo">Prentis Fox</div>
+        <input type="checkbox" id="click" />
+        <label for="click" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Learn</a></li>
+          <li><a class="active" href="#">Connect Wallet</a></li>
+          <li>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-gear-fill gear"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"
+                /></svg
+            ></a>
+          </li>
+        </ul>
       </nav>
       <div class="content">
         <div class="my-account-container">
-            <div class="title-my-account">
-                <h1>My Account</h1>
-            </div>  
-              <div class="filter-my-account">
-                <select name="home_filter" id="home_filter">
-                    <option value="" >All times</option>
-                    <option value="" selected="selected">7 Days</option>
-                    <option value="" >This Month</option>
-                    <option value="" >This Year</option>
-                </select>
-              </div>
-                <div class="growth-info">
-                    <h1>+17%</h1>
-                    <h6>Portfolio Growth</h6>
-                    <h1>+$18K</h1>
-                    <h6>Portfolio Growth</h6>
-                </div>
-                <div class="graphs-growth">
-                <div class="graph-1">
-                    <h1>Portfolio Growth</h1>
-                </div>
+          <div class="title-my-account">
+            <h1>My Account</h1>
+          </div>
+          <div class="filter-my-account">
+            <select name="home_filter" id="home_filter">
+              <option value="">All times</option>
+              <option value="" selected="selected">7 Days</option>
+              <option value="">This Month</option>
+              <option value="">This Year</option>
+            </select>
+          </div>
+          <div class="growth-info">
+            <h1>+17%</h1>
+            <h6>Portfolio Growth</h6>
+            <h1>+$18K</h1>
+            <h6>Portfolio Growth</h6>
+          </div>
+          <div class="graphs-growth">
+            <div class="graph-1">
+              <h1>Portfolio Growth</h1>
+            </div>
             <!-- table -->
             <div class="table-content table-account">
-                <h1>Total Market Cap</h1>
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td>Total Market Cap</td> 
-                            <td>$1.38th</td>
-                            <td>24hr +1.8%</td>
-                            <td>7d -8.6%</td>
-                         </tr>
-                </tbody>
-                </table>
-
-                <h1>Top 5 Coins</h1>
-                <table class="table">
+              <h1>Total Market Cap</h1>
+              <table class="table">
                 <tbody>
-                        <tr>
-                            <td>Bitcoin (BTC)</td> 
-                            <td>$33,434</td>
-                            <td>24hr +1.8%</td>
-                            <td>7d -8.6%</td>
-                            </tr>
-                        <tr>
-                            <td>Ethereum (ETH)</td>
-                            <td>$2010</td>
-                            <td>24hr +1.8%</td>
-                            <td>7d -8.6%</td>
-                           </tr>
-                        <tr>   
-                            <td>Tether(USDT)</td>
-                            <td>$1</td>
-                            <td>24hr +1.8%</td>
-                            <td>7d -8.6%</td>
-                            </tr>
-                        <tr>
-                            <td>Binance Coin (BNB)</td>
-                            <td>$354</td>
-                            <td>24hr +1.8%</td>
-                            <td>7d -8.6%</td>
-                           </tr>
-                        <tr>
-                            <td>CARDANO (ADA)</td>
-                            <td>1.26</td>
-                            <td>24hr +1.8%</td>
-                            <td>7d -8.6%</td>
-                        </tr>
-                    </tbody>
-                </table>
+                  <tr>
+                    <td>Total Market Cap</td>
+                    <td>$1.38th</td>
+                    <td>24hr +1.8%</td>
+                    <td>7d -8.6%</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h1>Top 5 Coins</h1>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Bitcoin (BTC)</td>
+                    <td>$33,434</td>
+                    <td>24hr +1.8%</td>
+                    <td>7d -8.6%</td>
+                  </tr>
+                  <tr>
+                    <td>Ethereum (ETH)</td>
+                    <td>$2010</td>
+                    <td>24hr +1.8%</td>
+                    <td>7d -8.6%</td>
+                  </tr>
+                  <tr>
+                    <td>Tether(USDT)</td>
+                    <td>$1</td>
+                    <td>24hr +1.8%</td>
+                    <td>7d -8.6%</td>
+                  </tr>
+                  <tr>
+                    <td>Binance Coin (BNB)</td>
+                    <td>$354</td>
+                    <td>24hr +1.8%</td>
+                    <td>7d -8.6%</td>
+                  </tr>
+                  <tr>
+                    <td>CARDANO (ADA)</td>
+                    <td>1.26</td>
+                    <td>24hr +1.8%</td>
+                    <td>7d -8.6%</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <!-- table End-->
-
-                </div>
+          </div>
         </div>
 
-<!-- MY INVESTMENTS -->
-<div class="investment-topDeals-container">
-    <div class="my-investments-container">
-        <div class="title-my-investments">
-            <h1>My Investments</h1>
-        </div>  
-        <div class="filter-my-investments">
-            <select name="home_filter" id="home_filter_invest">
+        <!-- MY INVESTMENTS -->
+        <div class="investment-topDeals-container">
+          <div class="my-investments-container">
+            <div class="title-my-investments">
+              <h1>My Investments</h1>
+            </div>
+            <div class="filter-my-investments">
+              <select name="home_filter" id="home_filter_invest">
                 <option value="" selected="selected">Active</option>
                 <option value="">Past</option>
-            </select>
+              </select>
+            </div>
+            <div class="text-investments">
+              <h6>
+                Keep track of liquity pools on which you have staked your
+                cryptocurrency
+              </h6>
+            </div>
+          </div>
+          <div class="top-deals-container">
+            <div class="title-top-deals">
+              <h1>Top Deals</h1>
+            </div>
+            <div class="text-top-deals">
+              <h6>
+                Keep track of liquity pools on which you have staked your
+                cryptocurrency
+              </h6>
+            </div>
+          </div>
         </div>
-        <div class="text-investments">
-            <h6>Keep track of liquity pools on which you have staked your cryptocurrency</h6>
-        </div>
-        
-
-       
-    </div>
-    <div class="top-deals-container">
-        <div class="title-top-deals">
-            <h1>Top Deals</h1>
-        </div>  
-        <div class="text-top-deals">
-            <h6>Keep track of liquity pools on which you have staked your cryptocurrency</h6>
-        </div>
-    </div>
-</div>
-
       </div>
-
-   </body>
+  </body>
 </html>
