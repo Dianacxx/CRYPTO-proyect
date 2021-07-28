@@ -1,3 +1,4 @@
+const { ethers } = require('ethers');
 const Web3 = require('web3');
 const GetPoolData = require('./getPoolData');
 
@@ -22,17 +23,22 @@ window.onload = function() {
     const connect = async() => {
         try {
             // find provider
-            let provider = window.ethereum;
-            if(provider) {
+            if(window.ethereum) {
                 // send connection request to wallet
-                await provider.request({ method: 'eth_requestAccounts' });
-                
-                // use web3 to fetch array of accounts
-                web3 = new Web3(provider);
-
-                web3.eth.getAccounts().then(addresses => {
+                await window.ethereum.enable();
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                const signer = provider.getSigner();
+                provider.listAccounts().then(addresses => {
                     account.innerText = addresses[0];
                 });
+                //await provider.request({ method: 'eth_requestAccounts' });
+                
+                // use web3 to fetch array of accounts
+                //web3 = new Web3(provider);
+
+                //web3.eth.getAccounts().then(addresses => {
+                //    account.innerText = addresses[0];
+                //});
                 
                 // display account information and hidde connectButton
                 content.style.display = '';
