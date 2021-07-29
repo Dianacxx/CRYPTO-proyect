@@ -11,7 +11,7 @@ const printArray = (array) => {
     console.log('TVL(in millions) by day');
     for(let i=1; i < array.length; i++){
         let date = new Date(array[i]['date'] * 1000);
-        console.log(`${date.getUTCMonth() + 1}/${date.getUTCDate()}/${date.getFullYear()}`, tvl.format(array[i]['tvlUSD']/ 1000000) + 'm');
+        console.log(`${date.getUTCMonth() + 1}/${date.getUTCDate()}/${date.getFullYear()}`, tvl.format(array[i]['tvlUSD']));
     }
 }
 
@@ -22,7 +22,7 @@ const getTVL = async(poolKey) => {
         {
             query: `
             {
-            pools(first: 1 where: {id: ${poolKey}}){
+            pools(first: 1 where: {id: "${poolKey}"}){
                 id
                 totalValueLockedToken0
                 totalValueLockedToken1
@@ -50,4 +50,23 @@ const getTVL = async(poolKey) => {
     }
 }
 
-module.exports = { getTVL, printArray };
+const getTicks = async(poolKey, tick) => {
+
+    const result = await axios.post('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
+    {
+        query: `
+        {
+            pools(first: 1 where: {id: "${poolKey}"}){
+                id
+                ticks(first: 3 where: {tickIdx_gte: ${tick}}){
+                  tickIdx
+                  liquidityNet
+                  liquidityGross
+                }
+              }
+        }`
+    });
+    return result.data.data.pools;
+}
+
+module.exports = { getTVL, getTicks, printArray };
