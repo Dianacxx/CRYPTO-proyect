@@ -26,81 +26,6 @@ header{
   padding-bottom: 20px;
   margin: 50px 254px 10px 204px;
 }
-/******** Slider **********
-
-.slick-slide{
-  margin: 0 20px;
-}
-.slick-slider{
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-}
-.slick-list{
-  position: relative;
-  display: block;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-.slick-track{
-  position: relative;
-  top: 0;
-  left: 0;
-  display: block
-}
-.slick-slide{
-  display: none;
-  float: left;
-  height: 100%;
-  min-height: 1px;
-}
-.slick-initialized .slick-slide{
-  display: block;
-}
-.copy{
-  padding-top: 250px;
-}
-
-.container-slider{
-  padding-top: 30px;
-  padding-top:55px;
-  padding-bottom: 30px;
-  margin: 20px 254px 2px 204px;
-  width: 70%;
-}
-.slider-title{
-  font-size: 19px;
-  font-weight: 300;
-  color: #7f7f7f;
-  padding-bottom: 21px;
-}
-.slide{
-  width: 158px;;
-  height: 72px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 10px;
-}
-.stock{
-  width: 90%;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  margin: auto;
-  border-radius: 10px;
-  text-align: justify;
-} 
-
-.stock img{
-  width: 41px;
-  height: 39px;
-  text-align: center;
-} 
-/******** Slider ENDS **********/
 /******** Slider2 START **********/
 .slider-title{
   font-size: 19px;
@@ -176,7 +101,7 @@ header{
   border-radius: 10px;
   /* padding: 15px; */
   perspective: 100px;
-  margin: 10px;
+  margin: 20px;
   /* border: 3px dashed pink; */
 }
 
@@ -290,10 +215,16 @@ header{
 .red {
   color: #f00606;
 }
+.red svg {
+  color: #f00606;
+  font-size: 4px;
+}
 
 .green {
   color: #11d811;
+  text-align: center;
 }
+
 
 /******** Slider2 ENDS **********/
 

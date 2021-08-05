@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Deals from "./deals";
 
 function Home() {
+  const [deals, setDeals] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:9000/testAPI")
+      .then((res) => {
+        setDeals(res.data);
+        console.log(res.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
+  const filteredDeals = deals.filter((deals) => deals.firstTokenSymbol);
   return (
     <div class="body-container">
-      
       {/*<!-- SLIDER-->*/}
 
       {/*<!-- SLIDER ENDS -->*/}
@@ -456,121 +468,21 @@ function Home() {
           </div>
 
           <div class="top-deals">
-            <div class="rectangle rectangle-top">
-              <table class="table top">
-                <tbody>
-                  <tr>
-                    <th>Pair</th>
-                    <th>Total Liquidity</th>
-                    <th>Yield</th>
-                  </tr>
-                  <tr>
-                    <td>USDT CQT</td>
-                    <td>$72k</td>
-                    <td>+25%</td>
-                    <td>
-                      <a href="#openModal6" class="myButton">
-                        {" "}
-                        Invest{" "}
-                      </a>
-                      <div id="openModal6" class="modalDialog invest-modal">
-                        <div class="modal-content">
-                          <a href="#close" title="Close" class="close">
-                            {" "}
-                            X{" "}
-                          </a>
-                          {/*
-                    <!-- <h1>HELLO</h1> -->
-                    */}
-
-                          <div class="close-button-container">
-                            <a
-                              href="#close-button"
-                              title="Close-button"
-                              class="close-button"
-                            >
-                              Confirm
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="rectangle rectangle-top">
-              <table class="table top">
-                <tbody>
-                  <tr>
-                    <th>Pair</th>
-                    <th>Total Liquidity</th>
-                    <th>Yield</th>
-                  </tr>
-                  <tr>
-                    <td>USDT CQT</td>
-                    <td>$72k</td>
-                    <td>+25%</td>
-                    <td>
-                      <a href="#!" class="myButton">
-                        {" "}
-                        Invest{" "}
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="rectangle rectangle-top">
-              <table class="table top">
-                <tbody>
-                  <tr>
-                    <th>Pair</th>
-                    <th>Total Liquidity</th>
-                    <th>Yield</th>
-                  </tr>
-                  <tr>
-                    <td>USDT CQT</td>
-                    <td>$72k</td>
-                    <td>+25%</td>
-                    <td>
-                      <a href="#!" class="myButton">
-                        {" "}
-                        Invest{" "}
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="rectangle rectangle-top">
-              <table class="table top">
-                <tbody>
-                  <tr>
-                    <th>Pair</th>
-                    <th>Total Liquidity</th>
-                    <th>Yield</th>
-                  </tr>
-                  <tr>
-                    <td>USDT CQT</td>
-                    <td>$72k</td>
-                    <td>+25%</td>
-                    <td>
-                      <a href="#!" class="myButton">
-                        {" "}
-                        Invest{" "}
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            {filteredDeals.map((deals) => {
+              return (
+                <Deals
+                  firstTokenSymbol={deals.firstTokenSymbol}
+                  secondTokenSymbol={deals.secondTokenSymbol}
+                  TVL={deals.TVL}
+                  yieldTotal={deals.yieldTotal}
+                />
+              );
+            })}
           </div>
         </div>
         {/*<!-- TOP DEALS  ENDS-->*/}
       </div>
     </div>
-
   );
 }
 
