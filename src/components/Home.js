@@ -6,15 +6,16 @@ function Home() {
   const [deals, setDeals] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:9000/testAPI")
+      .get("http://localhost:9000/topDealsAPI")
       .then((res) => {
         setDeals(res.data);
-        console.log(res.data);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  const filteredDeals = deals.filter((deals) => deals.firstTokenSymbol);
+  const filteredDeals = deals.filter((deals) => deals.token0);
+
+  
   return (
     <div class="body-container">
       {/*<!-- SLIDER-->*/}
@@ -471,10 +472,11 @@ function Home() {
             {filteredDeals.map((deals) => {
               return (
                 <Deals
-                  firstTokenSymbol={deals.firstTokenSymbol}
-                  secondTokenSymbol={deals.secondTokenSymbol}
-                  TVL={deals.TVL}
-                  yieldTotal={deals.yieldTotal}
+                  firstTokenSymbol={deals.token0.symbol}
+                  firstTokenId={deals.token0.id}
+                  secondTokenSymbol={deals.token1.symbol}
+                  TVL={deals.liquidity}
+                  yieldTotal={deals.yieldPer}
                 />
               );
             })}

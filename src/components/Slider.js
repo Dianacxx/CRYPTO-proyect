@@ -6,11 +6,9 @@ const Slider = () => {
   const [coins, setCoins] = useState();
   const fetchApi = async () => {
     const response = await fetch(url);
-    console.log(response.status);
     const responseJSON = await response.json();
 
     setCoins(responseJSON);
-    console.log(responseJSON);
   };
 
   useEffect(() => {
@@ -48,16 +46,6 @@ const Slider = () => {
                             {/* Price Change Color  */}
                             {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (
@@ -111,19 +99,9 @@ const Slider = () => {
                               })}
                             </p>
 
-                           {/* Price Change Color  */}
-                           {coin.price_change_percentage_24h < 0 ? (
+                            {/* Price Change Color  */}
+                            {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (
@@ -174,19 +152,9 @@ const Slider = () => {
                               ${coin.current_price.toFixed(2)}
                             </p>
 
-                           {/* Price Change Color  */}
-                           {coin.price_change_percentage_24h < 0 ? (
+                            {/* Price Change Color  */}
+                            {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (
@@ -240,19 +208,9 @@ const Slider = () => {
                               })}
                             </p>
 
-                           {/* Price Change Color  */}
-                           {coin.price_change_percentage_24h < 0 ? (
+                            {/* Price Change Color  */}
+                            {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (
@@ -306,19 +264,9 @@ const Slider = () => {
                               })}
                             </p>
 
-                          {/* Price Change Color  */}
-                          {coin.price_change_percentage_24h < 0 ? (
+                            {/* Price Change Color  */}
+                            {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (
@@ -376,16 +324,6 @@ const Slider = () => {
                             {/* Price Change Color  */}
                             {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (
@@ -439,19 +377,9 @@ const Slider = () => {
                               })}
                             </p>
 
-                           {/* Price Change Color  */}
-                           {coin.price_change_percentage_24h < 0 ? (
+                            {/* Price Change Color  */}
+                            {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (
@@ -501,19 +429,10 @@ const Slider = () => {
                             <p className="coin-percent-price">
                               ${coin.current_price.toFixed(2)}
                             </p>
-{/* Price Change Color  */}
-{coin.price_change_percentage_24h < 0 ? (
+                            {/* Price Change Color  */}
+                            {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
+                               
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (
@@ -567,19 +486,10 @@ const Slider = () => {
                               })}
                             </p>
 
-                           {/* Price Change Color  */}
-                           {coin.price_change_percentage_24h < 0 ? (
+                            {/* Price Change Color  */}
+                            {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
+                              
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (
@@ -633,19 +543,10 @@ const Slider = () => {
                               })}
                             </p>
 
-                           {/* Price Change Color  */}
-                           {coin.price_change_percentage_24h < 0 ? (
+                            {/* Price Change Color  */}
+                            {coin.price_change_percentage_24h < 0 ? (
                               <p className="coin-percent red">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="10"
-                                  height="10"
-                                  fill="currentColor"
-                                  class="bi bi-caret-down-fill"
-                                  viewBox="0 0 16 16"
-                                >
-                                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
+                               
                                 {coin.price_change_percentage_24h.toFixed(2)}%
                               </p>
                             ) : (

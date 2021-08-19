@@ -1,34 +1,33 @@
 import React from 'react';
-import RLogin, { RLoginButton } from '@rsksmart/rlogin'
-import WalletConnectProvider from '@walletconnect/web3-provider'
-import { useState } from 'react';
-// construct rLogin pop-up in DOM
-const rLogin = new RLogin({
-  cachedProvider: false, // change to true to cache user's wallet choice
-  providerOptions: { 
-    walletconnect: {
-      package: WalletConnectProvider, // setup wallet connect for mobile wallet support
-      options: {
-        rpc: {
-          31: 'https://public-node.testnet.rsk.co' // use RSK public nodes to connect to the testnet
-        }
-      }
-    }
-  },
-  supportedChains: [31] // enable rsk testnet network
-})
+const { ethers } = require('ethers');
+
 
 function Header () {
-  const [provider, setProvider] = useState(null)
-  const [account, setAccount] = useState(null)
-
-    // display pop up
-  const connect = () => rLogin.connect()
-    .then(({ provider }) => { 
-      setProvider(provider)
-      // request user's account
-      provider.request({ method: 'eth_accounts' }).then(([account]) => setAccount(account))
-    })
+  const connect = async() => {
+    try {
+        // find provider
+        if(window.ethereum) {
+            // send connection request to wallet
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await window.ethereum.request({ method: 'eth_requestAccounts' });
+            provider.listAccounts().then(addresses => {
+                console.log (addresses[0]);
+            });
+            
+            // display account information and hide connectButton
+            // content.style.display = '';
+            // connectButton.style.display = 'none';
+            return provider;
+        } else {
+            // handler in case a web3 provider is not found
+            alert('You require a web3 provider');
+        }
+    } catch(error) {
+        // handler in case user rejects the connection request
+        alert('You have rejected the request');
+    }
+  }
+  
     return (
         <header>
         <nav>
@@ -44,7 +43,7 @@ function Header () {
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="learn.html">Learn</a></li>
-            <li><RLoginButton onClick={connect}>Connect wallet</RLoginButton></li>
+            <li><button onClick={connect} className="myButton">Connect Wallet</button></li>
             <li>
               <a href="configuration">
                 <svg
