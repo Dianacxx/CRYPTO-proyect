@@ -56,4 +56,70 @@ const getTVL = async() => {
     }
 }
 
-module.exports = { getTVL, printArray };
+
+
+const getPairs = async() => {
+
+    const result = await axios.post('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2',
+    {
+        query: `
+        {
+            pairs(first: 5
+              where: {txCount_gt: 10000}
+              orderBy: reserveUSD
+              orderDirection: desc){
+              id
+              reserveUSD
+              token0{
+                id
+                symbol
+              }
+              token1{
+                id
+                symbol
+              }
+            }
+        }`
+    });
+    return result.data.data.pairs;
+}
+
+const getDayData = async(pairKey) => {
+    
+    const result = await axios.post('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2',
+    {
+        query: `
+        {
+            pairDayDatas(first: 1, where: {pairAddress: "${pairKey}"} orderBy: date orderDirection: desc){
+              reserveUSD
+              dailyVolumeUSD
+            }
+          }`
+    });
+    return result.data.data.pairDayDatas;
+}
+
+
+const getHourData = async(poolKey) => {
+
+    let date = new Date();
+    date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
+    date.setMinutes(0,0,0);
+    date.setDate(date.getDate() - 1);
+    date = Math.floor(date / 1000);
+
+    const result = await axios.post('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2',
+    {
+        query: `
+        {
+            pairHourDatas(where: {hourStartUnix_gte: ${date} pair: "${poolKey}"} orderBy: hourStartUnix orderDirection: desc){
+              hourlyVolumeUSD
+              hourStartUnix
+            }
+        }`
+    });
+    
+    return result.data.data.pairHourDatas;
+}
+
+module.exports = { getTVL, getPairs, getDayData, getHourData, printArray };
