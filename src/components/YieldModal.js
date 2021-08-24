@@ -15,7 +15,7 @@ const YieldModal = ({
   closeModalYield,
   title,
   children,
-  yieldTotal
+  yieldGraph
 }) => {
   const handleModalDialogClick = (e) => {
     e.stopPropagation();
@@ -23,61 +23,61 @@ const YieldModal = ({
 
   const data = [
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 1,
       pv: 2400,
       amt: 2400,
     },
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 2,
       pv: 1398,
       amt: 2210,
     },
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 3,
       pv: 9800,
       amt: 2290,
     },
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 4,
       pv: 3908,
       amt: 2000,
     },
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 5,
       pv: 4800,
       amt: 2181,
     },
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 6,
       pv: 3800,
       amt: 2500,
     },
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 7,
       pv: 4300,
       amt: 2100,
     },
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 8,
       pv: 2400,
       amt: 2400,
     },
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 9,
       pv: 1398,
       amt: 2210,
     },
     {
-      yield: yieldTotal,
+      yield: yieldGraph,
       day: 10,
       pv: 9800,
       amt: 2290,

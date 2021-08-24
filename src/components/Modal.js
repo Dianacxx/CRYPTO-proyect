@@ -29,8 +29,8 @@ const Modal = ({
       to: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
     },
     symbols: {
-      from: firstTokenSymbol,
-      to: secondTokenSymbol
+      from: 'WETH',
+      to: 'UNI'
     },
     fees24h: 1000
   };
