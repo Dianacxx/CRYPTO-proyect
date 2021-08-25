@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 
 import Modal from "../components/Modal";
-import YieldModal from "./YieldModal";
+import YieldModal from "./YieldGraphModal";
 import useModal from "../hooks/useModal";
 import useModalYield from "../hooks/useModalYield";
 const Deals = ({

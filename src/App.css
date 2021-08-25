@@ -387,6 +387,7 @@ input[type="checkbox"] {
   color: #7f7f7f;
   line-height: normal;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .graph-1 img {
@@ -439,25 +440,6 @@ input[type="checkbox"] {
   font-weight: 600;
 }
 
-.filter-my-investments {
-  display: flex;
-  align-items: center;
-  grid-area: filter-myInvestments;
-  grid-column-start: filter-investments-column;
-  grid-column-end: last-investments-column;
-  grid-row-start: first-investments-row;
-  grid-row-end: text-investments-row;
-  /* border: 3px dashed; */
-}
-#home_filter_invest {
-  border: none;
-  outline: none;
-  background-color: #f2f2f2;
-  color: #7f7f7f;
-  width: 90%;
-  font-size: 15px;
-  font-weight: 400;
-}
 .text-investments {
   grid-area: text;
   grid-column-start: first-investments-column;
@@ -658,6 +640,12 @@ input[type="checkbox"] {
 .myButton:active {
   position: relative;
   top: 1px;
+}
+
+.eye-button{
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 /**********MY INVESTMENTS STYLES (END)************/

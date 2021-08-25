@@ -1,5 +1,7 @@
 import React from "react";
 import "../App.css";
+import InvestmentModal from "./InvestmentModal";
+import useInvestmentModal from "../hooks/useInvestmentModal";
 
 const Investments = ({
     firstToken,
@@ -7,7 +9,9 @@ const Investments = ({
     initialStake,
     yieldInvestment
   }) => {
-  
+
+    const [isOpenInvestmentModal, openInvestmentModal, closeInvestmentModal] = useInvestmentModal();
+
   return (
     <div>
         <div class="rectangle">
@@ -26,7 +30,7 @@ const Investments = ({
                   {/*
                   <!-- Trigger/Open The Modal -->
                   */}
-                  <a href="#openModal1">
+                  <button onClick={openInvestmentModal} className="eye-button">
                     <svg
                       class="eye-button"
                       version="1.1"
@@ -34,6 +38,7 @@ const Investments = ({
                       width="17px"
                       height="11px"
                       xmlns="http://www.w3.org/2000/svg"
+                       
                     >
                       <g transform="matrix(1 0 0 1 -414 -916 )">
                         <path
@@ -45,64 +50,16 @@ const Investments = ({
                         />
                       </g>
                     </svg>
-                  </a>
-
-                  <div id="openModal1" class="modalDialog">
-                    <div class="modal-content">
-                      <a href="#close" title="Close" class="close">
-                        {" "}
-                        X{" "}
-                      </a>
-
-                      <h2>UNISWAP USDT/BUSD</h2>
-                      <table class="table-modal">
-                        <tbody>
-                          <tr>
-                            <th>Initial Stake</th>
-                            <th>Current Stake</th>
-                          </tr>
-                          <tr>
-                            <td>$74K</td>
-                            <td>$72k</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <table class="table-modal">
-                        <tbody>
-                          <tr>
-                            <th>Initial Stake</th>
-                            <th>Current Stake</th>
-                          </tr>
-                          <tr>
-                            <td>USDT CQT</td>
-                            <td>$72k</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <table class="table-modal">
-                        <tbody>
-                          <tr>
-                            <th>Initial Stake</th>
-                            <th>Current Stake</th>
-                          </tr>
-                          <tr>
-                            <td>USDT CQT</td>
-                            <td>$72k</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                      <div class="close-button-container">
-                        <a
-                          href="#close-button"
-                          title="Close-button"
-                          class="close-button"
-                        >
-                          Close Position
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </td>
+                    </button>
+                    <InvestmentModal
+                    isInvestmentOpen={isOpenInvestmentModal}
+                    closeInvestmentModal={closeInvestmentModal}
+                    
+                    firstToken={firstToken}
+                    secondToken={secondToken}
+                    yieldInvestment={yieldInvestment}
+                   />
+                  </td>
               </tr>
             </tbody>
           </table>

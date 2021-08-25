@@ -1,5 +1,5 @@
 import React from "react";
-import "./YieldModal.css";
+import "./YieldGraphModal.css";
 
 import {
   AreaChart,
