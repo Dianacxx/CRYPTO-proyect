@@ -10,8 +10,7 @@ const Deals = ({
   firstTokenSymbol,
   secondTokenSymbol,
   TVL,
-  yieldTotal,
-  yieldGraph
+  yieldTotal
 }) => {
 
   const [isOpenModal, openModal, closeModal] = useModal();
@@ -71,7 +70,7 @@ const Deals = ({
                     closeModalYield={closeModalYield}
                     title="Yield Graph"
                     yieldTotal={yieldTotal}
-                    yieldGraph={yieldGraph}
+                   
                   />
                 </td>
               </tr>

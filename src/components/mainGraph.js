@@ -1,8 +1,8 @@
-import "./mainGraph.css"
-import React from "react"
+import "./mainGraph.css";
+import React from "react";
 import ApexCharts from "apexcharts";
 import ReactApexChart from "react-apexcharts";
-class ApexChart extends React.Component {
+class MainChart extends React.Component {
   constructor(props) {
     super(props);
 
@@ -295,25 +295,25 @@ class ApexChart extends React.Component {
           height: 350,
           toolbar: {
             show: true,
-            tools:{
-                download: true,
-                selection: true,
-                zoom: false,
-                zoomin: false,
-                zoomout: false,
-                pan: false,
-                reset: true | '<img src="/static/icons/reset.png" width="20">',
-            }
+            tools: {
+              download: true,
+              selection: true,
+              zoom: false,
+              zoomin: false,
+              zoomout: false,
+              pan: false,
+              reset: true | '<img src="/static/icons/reset.png" width="20">',
+            },
           },
           animations: {
-            enabled: true
+            enabled: true,
           },
           zoom: {
-              autoScaleYaxis: true,
-              enabled: true
-          }
+            autoScaleYaxis: true,
+            enabled: true,
+          },
         },
-      
+
         stroke: {
           width: 1.2,
         },
@@ -366,8 +366,8 @@ class ApexChart extends React.Component {
           },
         },
 
-        //Gradient backgrount color 
-        colors: ['#28347d'],
+        //Gradient backgrount color
+        colors: ["#28347d"],
         fill: {
           type: "gradient",
           gradient: {
@@ -380,8 +380,6 @@ class ApexChart extends React.Component {
       },
 
       selection: "one_year",
-
-   
     };
   }
 
@@ -494,4 +492,4 @@ class ApexChart extends React.Component {
   }
 }
 
-export default ApexChart;
+export default MainChart;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Deals from "./deals";
 import Investments from "./Investments.js";
-import ApexChart from "./mainGraph";
+import MainChart from "./mainGraph";
 
 function Home() {
   const [deals, setDeals] = useState([]);
@@ -89,7 +89,7 @@ function Home() {
         <div class="graphs-growth">
           <div class="graph-1">
             <h3>Portfolio Growth</h3>
-            <ApexChart/>
+            <MainChart/>
           </div>
         </div>
       </div>
